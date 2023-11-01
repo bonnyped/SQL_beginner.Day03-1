@@ -4,7 +4,6 @@ WITH not_ordered_pizza AS (SELECT mn.id AS menu_id
                            SELECT po.menu_id
                            FROM person_order po
                            ORDER BY 1)
-
 SELECT mn.pizza_name,
        mn.price,
        zz.name pizzeria_name

@@ -1,5 +1,5 @@
 WITH number_of_order AS (SELECT generate_series(max(po.id) + 1, max(po.id) + max(p.id)) number,
-                                generate_series(1, max(p.id))                           count
+                                generate_series(1, max(p.id))                           count_num
                          FROM person p,
                               person_order po),
      list_of_persons AS (SELECT generate_series(1, max(p.id)) number
@@ -11,7 +11,7 @@ WITH number_of_order AS (SELECT generate_series(max(po.id) + 1, max(po.id) + max
                                         WHERE mn.pizza_name = 'greek pizza') menu_id,
                                        '2022-02-25'::date order_date
                                 FROM number_of_order no
-                                         JOIN list_of_persons lp ON no.count = lp.number)
+                                         JOIN list_of_persons lp ON no.count_num = lp.number)
 INSERT
 INTO person_order(id, person_id, menu_id, order_date)
 SELECT ttno.order_number,

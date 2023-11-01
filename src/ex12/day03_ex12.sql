@@ -18,4 +18,5 @@ SELECT ttno.order_number,
        ttno.person_id,
        ttno.menu_id,
        ttno.order_date
-FROM total_table_new_orders ttno;
+FROM total_table_new_orders ttno
+RETURNING *;

@@ -7,5 +7,5 @@ FROM menu mn
          JOIN person p ON pv.person_id = p.id
          JOIN pizzeria zz ON zz.id = pv.pizzeria_id
 WHERE p.name IN ('Kate')
-  AND price BETWEEN 800 AND 999
+  AND price BETWEEN 800 AND 1000
 ORDER BY 1, 2, 3;

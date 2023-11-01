@@ -10,4 +10,5 @@ VALUES ((SELECT max(id + 1)
                       FROM person p
                       WHERE name IN ('Irina')), (SELECT zz.id
                           FROM pizzeria zz
-                          WHERE zz.name IN ('Dominos')), '2022-02-24');
+                          WHERE zz.name IN ('Dominos')), '2022-02-24')
+RETURNING *;
